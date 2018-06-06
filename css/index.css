@@ -1,0 +1,261 @@
+form .captchaDiv input[type="text"],
+form .formDiv input,
+form .formDiv .checkboxDiv .checkbox label,
+button {
+    font-family: "Dosis", sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    box-sizing: border-box;
+    outline: 0;
+    border-radius: 2px;
+}
+form .captchaDiv input[type="text"],
+form .formDiv input,
+form .formDiv .checkboxDiv .checkbox label {
+    background: rgba(31, 33, 36, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 8px 0;
+}
+form .captchaDiv input[type="text"] {
+    background: #ffffff;
+    color: #353535;
+    border: none;
+}
+/*
+	Amazing CSS Spinner from
+	http://tobiasahlin.com/spinkit/
+*/
+
+.spinner {
+    margin: 0 auto;
+    width: 70px;
+    text-align: center;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+}
+.spinner > div {
+    width: 18px;
+    height: 18px;
+    background-color: #ffffff;
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+.spinner .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+@-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes sk-bouncedelay {
+    0%, 80%, 100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body {
+    background: #353535;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: "Dosis", sans-serif;
+    color: #ffffff;
+    font-weight: 200;
+    letter-spacing: 0.11em;
+}
+a {
+    color: #2F8BE6;
+}
+h1 {
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+}
+h1 > span {
+    font-weight: 400;
+}
+h1 .blue {
+    color: #0cf;
+}
+h1 .pink {
+    color: #e54cb5;
+}
+h1 .red {
+    color: #fc6669;
+}
+h1 .green {
+    color: #0f9;
+}
+h1 .purple {
+    color: #93f;
+}
+.container {
+    max-width: 600px;
+    margin: 50px auto 0;
+}
+form {
+    width: 100%;
+    margin: 0 auto;
+    color: #ffffff;
+}
+form .formDiv {
+    position: relative;
+    margin-bottom: 20px;
+}
+form .formDiv .label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    opacity: .3;
+    z-index: 2;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+form .formDiv input {
+    position: relative;
+    z-index: 3;
+}
+form .formDiv input[type="text"] {
+    width: 100%;
+    height: 60px;
+    box-shadow: inset 0 0 10px 1px transparent;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+form .formDiv input[type="text"]:focus {
+    box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, 0.3);
+}
+form .formDiv input[type="text"]:focus ~ .label,
+form .formDiv input[type="text"]:valid ~ .label {
+    top: 15px;
+    font-size: 10px;
+    opacity: .8;
+    z-index: 4;
+}
+form .formDiv input[type="checkbox"] {
+    visibility: hidden;
+}
+form .formDiv .checkboxDiv {
+    position: relative;
+}
+form .formDiv .checkboxDiv .checkbox,
+form .formDiv .checkboxDiv > span {
+    display: inline-block;
+    vertical-align: middle;
+}
+form .formDiv .checkboxDiv .checkbox {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    margin-right: 5px;
+}
+form .formDiv .checkboxDiv .checkbox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+}
+form .formDiv .checkboxDiv .checkbox input[type="checkbox"]:checked ~ label {
+    box-shadow: inset 0 0 3px 2px rgba(0, 0, 0, 0.3);
+}
+form .formDiv .checkboxDiv .checkbox input[type="checkbox"]:checked ~ label:after {
+    content: "\f00c";
+    font-family: FontAwesome;
+    font-size: 0.75rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+form .captchaDiv {
+    overflow-y: hidden;
+    max-height: 800px;
+    -webkit-transition: all .8s ease;
+    transition: all .8s ease;
+}
+form .captchaDiv.close {
+    max-height: 0;
+}
+form .captchaDiv #giphy_captcha {
+    background: #1F2124;
+    text-align: center;
+    border-radius: 2px 2px 0 0;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+form .captchaDiv input[type="text"] {
+    padding-top: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 50px;
+}
+form .captchaDiv span {
+    display: block;
+    text-transform: initial;
+    margin-bottom: 20px;
+}
+form .formData {
+    position: relative;
+}
+form .formData.disabled:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(53, 53, 53, 0.6);
+    z-index: 10;
+}
+button {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    background: #2F8BE6;
+    color: #ffffff;
+    border: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-transition: all .3s linear;
+    transition: all .3s linear;
+}
+button .spinner {
+    display: none;
+}
+button:hover {
+    background: #1871ca;
+}
+button:disabled {
+    background: #1DE9B6;
+    cursor: default;
+}
