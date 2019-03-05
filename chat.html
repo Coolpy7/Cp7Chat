@@ -45,19 +45,19 @@
     }
 
     var uid = getParameterByName('uid');
-    if (uid.length < 3) {
+    if (uid.length < 1) {
         window.location.href = '/';
     }
 
     $(document).ready(function () {
         var topic = "coolpy/chatroom";
         // Create a client instance
-        client = new Paho.MQTT.Client("i.icoolpy.com", Number(8443), "/", uid);
+        client = new Paho.Client("127.0.0.1", Number(8083), "/", uid);
         // set callback handlers
         client.onConnectionLost = onConnectionLost;
         client.onMessageArrived = onMessageArrived;
         client.onConnected = function () {
-            message = new Paho.MQTT.Message(JSON.stringify({"uid": uid, "cmd": "add"}));
+            message = new Paho.Message(JSON.stringify({"uid": uid, "cmd": "add"}));
             message.destinationName = topic;
             client.send(message);
         };
@@ -94,7 +94,7 @@
             client.connect({
                 onSuccess: onConnect,
                 cleanSession: true,
-                useSSL: true,
+                useSSL: false,
                 reconnect: true,
                 keepAliveInterval: 30
             });
@@ -111,7 +111,7 @@
                 return false;
             }
             $('.message-input').val(null);
-            message = new Paho.MQTT.Message(JSON.stringify({"uid": uid, "cmd": "msg", "msg": msg}));
+            message = new Paho.Message(JSON.stringify({"uid": uid, "cmd": "msg", "msg": msg}));
             message.destinationName = topic;
             message.qos = 0;
             client.send(message);

@@ -14,7 +14,7 @@ $(document).ready(function() {
 
             var userid = $('#userid').val();
             var mail = $('#email').val();
-            if (userid.length >= 3 && mail.length >= 3) {
+            if (userid.length >= 0 && mail.length >= 0) {
                 $('#userid').val(null);
                 $('#email').val(null);
                 // console.log('validated!');
@@ -23,7 +23,7 @@ $(document).ready(function() {
                     btn.prop('disabled', true);
                     $('.captchaDiv').toggleClass('close');
                     $('.formData').addClass('disabled');
-                    window.location.href = '/chat.html?uid='+userid+'&email='+mail;
+                    window.location.href = '/Cp7Chat/chat.html?uid='+userid+'&email='+mail;
                 });
             } else {
                 spinner.fadeOut(300, function() {
